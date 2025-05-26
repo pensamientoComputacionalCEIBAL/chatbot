@@ -1,0 +1,48 @@
+/* styles.css */
+body {
+  font-family: 'Roboto', sans-serif;
+  background: linear-gradient(to right, #dceefb, #f3e8ff);
+  margin: 0;
+  padding: 0;
+}
+
+.chat-card {
+  width: 100%;
+  max-width: 950px;
+  background-color: white;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  height: 95vh; /* 👈 75% de la altura visible */
+  display: flex;
+  flex-direction: column;  
+}
+
+.chat-header {
+  background-color: #4f46e5;
+  color: white;
+  font-size: 1.25rem;
+  font-weight: bold;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+}
+
+#chatHistory {
+  flex-grow: 1;
+  overflow-y: auto;
+}
+
+.chat-input input {
+  font-size: 14px;
+}
+
+.chat-message {
+  background-color: #e2e8f0;
+  border-left: 4px solid #4f46e5;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
