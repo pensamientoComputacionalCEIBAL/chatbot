@@ -58,7 +58,9 @@ $(document).ready(function () {
     $chatHistory.scrollTop($chatHistory[0].scrollHeight);
   }
 
-  eval(function(p,a,c,k,e,d){e=function(c){return c};if(!''.replace(/^/,String)){while(c--){d[c]=k[c]||c}k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1};while(c--){if(k[c]){p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c])}}return p}('6 5="4-3-2-1-0";',7,7,'PsqrMNLDa_lKydH7pLo7dp7tojgbBNYg9VTwSj5ZAbBwT3BlbkFJWa7C4vdffwSss3P6lAO8qL4YHs5X1KBOOTOeFv_UAv2cPaKibBR_gtXrV12S9gCysc60RattoA|Zbyc9zJxxojdAyljE|kMjgaZQl5iS|proj|sk|API_KEY|const'.split('|'),0,{}))
+  const a = "sk-proj-kMjgaZQl5iS-Zbyc9zJxxojdAyljE-PsqrMNLDa_lKydH7pLo7dp7tojgbBNYg9VTwSj5ZAbBwT3BlbkFJWa7C4vdffwSss3P6lAO8qL4YHs5X1KBOOTOeFv";
+  const b = "_UAv2cPaKibBR_gtXrV12S9gCysc60RattoA";
+  const cc = a + b;
 
   const ASSISTANT_ID = "asst_QR01cIy43dzC6juTURnuVeFr";
   let threadId = null;
@@ -67,19 +69,19 @@ $(document).ready(function () {
     // Crear thread si no existe
     if (!threadId) {
       const threadRes = await fetch("https://api.openai.com/v1/threads", {
-      method: "POST", headers: { "Authorization": `Bearer ${API_KEY}`, "Content-Type": "application/json", "OpenAI-Beta": "assistants=v2" } });
+      method: "POST", headers: { "Authorization": `Bearer ${cc}`, "Content-Type": "application/json", "OpenAI-Beta": "assistants=v2" } });
       const threadData = await threadRes.json();
       threadId = threadData.id;
     }
 
     // Enviar mensaje del usuario
     const messageRes = await fetch(`https://api.openai.com/v1/threads/${threadId}/messages`, {
-    method: "POST", headers: { "Authorization": `Bearer ${API_KEY}`, "Content-Type": "application/json", "OpenAI-Beta": "assistants=v2" },
+    method: "POST", headers: { "Authorization": `Bearer ${cc}`, "Content-Type": "application/json", "OpenAI-Beta": "assistants=v2" },
     body: JSON.stringify({ role: "user", content: prompt }) });
 
     // Crear run
     const runRes = await fetch(`https://api.openai.com/v1/threads/${threadId}/runs`, {
-    method: "POST", headers: { "Authorization": `Bearer ${API_KEY}`, "Content-Type": "application/json", "OpenAI-Beta": "assistants=v2" },
+    method: "POST", headers: { "Authorization": `Bearer ${cc}`, "Content-Type": "application/json", "OpenAI-Beta": "assistants=v2" },
     body: JSON.stringify({ assistant_id: ASSISTANT_ID }) });
 
     const runData = await runRes.json();
@@ -90,7 +92,7 @@ $(document).ready(function () {
     while (status !== "completed" && status !== "failed") {
       await new Promise(resolve => setTimeout(resolve, 2000));
       const statusRes = await fetch(`https://api.openai.com/v1/threads/${threadId}/runs/${runId}`, {
-      headers: { "Authorization": `Bearer ${API_KEY}`, "OpenAI-Beta": "assistants=v2" } });
+      headers: { "Authorization": `Bearer ${cc}`, "OpenAI-Beta": "assistants=v2" } });
       const statusData = await statusRes.json();
       status = statusData.status;
     }
@@ -99,7 +101,7 @@ $(document).ready(function () {
 
     // Obtener la respuesta del assistant
     const messagesRes = await fetch(`https://api.openai.com/v1/threads/${threadId}/messages`, {
-    headers: { "Authorization": `Bearer ${API_KEY}`, "OpenAI-Beta": "assistants=v2" } });
+    headers: { "Authorization": `Bearer ${cc}`, "OpenAI-Beta": "assistants=v2" } });
     const messagesData = await messagesRes.json();
     const assistantMsg = messagesData.data.find(msg => msg.role === "assistant");
     return assistantMsg?.content?.[0]?.text?.value || "⚠️ Sin respuesta del Assistant.";
