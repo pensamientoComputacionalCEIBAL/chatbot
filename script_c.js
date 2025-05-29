@@ -107,10 +107,12 @@ $(document).ready(function () {
 
   // Ejecutar cada 1 minuto (60000 ms)
   setInterval(() => {
+  if (historialChat && historialChat.length > 0) {
     $sendButton.prop('disabled', true).text('Guardando...');
     enviarAAppWeb(historialChat);
     setTimeout(() => { $sendButton.prop('disabled', false).text('Enviar'); }, 1000);
-  }, 210000);  // 3.5 minutos = 3 * 60 * 1000 + 30 * 1000 = 210000 ms
+  } }, 210000);  // 3.5 minutos
+
 
   function enviarAAppWeb(historial) {
     const historialString = JSON.stringify({ idConversacion, historial }); // Incluir ID
