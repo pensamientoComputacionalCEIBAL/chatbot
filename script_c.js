@@ -58,7 +58,7 @@ $(document).ready(function () {
     $chatHistory.scrollTop($chatHistory[0].scrollHeight);
   }
 
-  const API_KEY = "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";
+  const API_KEY = "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";
   const ASSISTANT_ID = "asst_QR01cIy43dzC6juTURnuVeFr";
   let threadId = null;
 
