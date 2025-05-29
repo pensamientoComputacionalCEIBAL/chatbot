@@ -18,7 +18,7 @@ $(document).ready(function () {
   // Generar un ID único simple
   function generarIdConversacion() { const ahora = new Date(); return 'conv-' + ahora.getTime(); }
 
-  // Mensaje inicial que se guarda también en el historial
+  // Configuración inicial
   async function configInicial() { $messageInput.prop('disabled', false).focus(); $sendButton.prop('disabled', false); }
 
   $sendButton.on('click', async function () {
@@ -111,10 +111,10 @@ $(document).ready(function () {
   // Ejecutar cada 1 minuto (60000 ms)
   setInterval(() => {
   if (historialChat && historialChat.length > 0) {
-    $sendButton.prop('disabled', true).text('Guardando...');
+    //$sendButton.prop('disabled', true).text('Guardando...');
     enviarAAppWeb(historialChat);
-    setTimeout(() => { $sendButton.prop('disabled', false).text('Enviar'); }, 1000);
-  } }, 210000);  // 3.5 minutos
+    //setTimeout(() => { $sendButton.prop('disabled', false).text('Enviar'); }, 1000);
+  } }, 30000);  // 3.5 minutos 210000
 
 
   function enviarAAppWeb(historial) {
@@ -130,5 +130,4 @@ $(document).ready(function () {
     }).catch(error => console.error("Error:", error));
   }
 
-  
 });
