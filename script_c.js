@@ -118,6 +118,7 @@ $(document).ready(function () {
 
 
   function enviarAAppWeb(historial) {
+    if (!historial || historial.length === 0) return;
     const historialString = JSON.stringify({ idConversacion, historial }); // Incluir ID
 
     const url = "https://script.google.com/macros/s/AKfycbx6F7DqKUgVVvwTzSe-ViE9jOvucp-qpfidsxMy858ZHt80zQReBiayzAqeR-UK-LQ/exec?historial=" + encodeURIComponent(historialString);
