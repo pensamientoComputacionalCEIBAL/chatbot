@@ -58,8 +58,8 @@ $(document).ready(function () {
     $chatHistory.scrollTop($chatHistory[0].scrollHeight);
   }
 
-  const a = "sk-proj-kMjgaZQl5iS-Zbyc9zJxxojdAyljE-PsqrMNLDa_lKydH7pLo7dp7tojgbBNYg9VTwSj5ZAbBwT3BlbkFJWa7C4vdffwSss3P6lAO8qL4YHs5X1KBOOTOeFv";
-  const b = "_UAv2cPaKibBR_gtXrV12S9gCysc60RattoA";
+  const a = "sk-proj-Hv0gRx50YLnoYPSLvZxyN0Oc3YgRxGqnyANfF0GUoIRkapQEY71nk6gZe-JPDqCw2RXZXxbCMrT3BlbkFJl1KNkBZCuEaaIbAy5OJBwaqbS3931vNep1FpoDLSYbPE";
+  const b = "_4GC3b7UCXDzKcNX4Xpr4Z4suDGzsA";
   const cc = a + b;
 
   const ASSISTANT_ID = "asst_QR01cIy43dzC6juTURnuVeFr";
