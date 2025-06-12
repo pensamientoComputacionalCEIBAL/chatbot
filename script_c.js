@@ -58,9 +58,9 @@ $(document).ready(function () {
     $chatHistory.scrollTop($chatHistory[0].scrollHeight);
   }
 
-  const a = "sk-proj-Hv0gRx50YLnoYPSLvZxyN0Oc3YgRxGqnyANfF0GUoIRkapQEY71nk6gZe-JPDqCw2RXZXxbCMrT3BlbkFJl1KNkBZCuEaaIbAy5OJBwaqbS3931vNep1FpoDLSYbPE";
-  const b = "_4GC3b7UCXDzKcNX4Xpr4Z4suDGzsA";
-  const cc = a + b;
+  //const a = "sk-proj-Hv0gRx50YLnoYPSLvZxyN0Oc3YgRxGqnyANfF0GUoIRkapQEY71nk6gZe-JPDqCw2RXZXxbCMrT3BlbkFJl1KNkBZCuEaaIbAy5OJBwaqbS3931vNep1FpoDLSYbPE";
+  //const b = "_4GC3b7UCXDzKcNX4Xpr4Z4suDGzsA";
+  const cc = "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";
 
   const ASSISTANT_ID = "asst_QR01cIy43dzC6juTURnuVeFr";
   let threadId = null;
