@@ -58,11 +58,11 @@ $(document).ready(function () {
     $chatHistory.scrollTop($chatHistory[0].scrollHeight);
   }
 
-  const a = "sk-proj-9vUGmvg6Ci2HzQKbifCu0SrZ25tGZN-8zL8ljoNS91V5xTR0GbInlKs60GkKz-is8kBPA3qMV-";
-  const b = "T3BlbkFJAGmHjZnEudH_KGL-9Kq_Sd9hed4-iD8AKLe-7p6gdz_MZ8uQ44ZoEcuptwOtrKE-MBK1MMgWMA";
+  const a = "sk-proj-R4H0-o0FzS_aAuu0pdDiysQRxXBOHmWEZELkj7-WxCTLKKJ3o-HPEYoTVD_";
+  const b = "hpu1o6SAgnkwfejT3BlbkFJtWVtJc9kl-qHe5cj9nFa9vyyAxZ5Y8y_9-27Fpe9xHAfvPCjp15v6BrsOgmyNLWmEeOpQ8HxQA";
   const cc = a + b;
 
-  const ASSISTANT_ID = "asst_QR01cIy43dzC6juTURnuVeFr";
+  const ASSISTANT_ID = "asst_cgxGBglkWpgMR9cUZCNKN5ii";
   let threadId = null;
 
   async function getAIResponse(prompt) { try {
