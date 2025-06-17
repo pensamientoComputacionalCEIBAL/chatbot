@@ -35,12 +35,12 @@ $(document).ready(function () {
       $messageInput.prop('disabled', true);
       $sendButton.prop('disabled', true).text('Procesando...');
 
-      if (message.toLowerCase().includes('fin_test_2025')) { appendMessage(`<strong>IA:</strong> ¡Hasta luego! Gracias por chatear. 😊`, 'ia'); return; }
+      if (message.toLowerCase().includes('fin_test_2025')) { appendMessage(`¡Hasta luego! Gracias por chatear. 😊`, 'ia'); return; }
       
       const aiResponse = await getAIResponse(prompt);
 
-      try { appendMessage(`<strong>IA:</strong> ${aiResponse}`, 'ia'); } 
-      catch (error) { appendMessage(`<strong>IA:</strong> Error al obtener respuesta.</strong>`, 'ia'); } 
+      try { appendMessage(`${aiResponse}`, 'ia'); } 
+      catch (error) { appendMessage(`Error al obtener respuesta.</strong>`, 'ia'); } 
       finally {
         // Habilitar ambos luego de la respuesta o error
         $messageInput.prop('disabled', false);
