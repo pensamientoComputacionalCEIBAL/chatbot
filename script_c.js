@@ -52,8 +52,12 @@ $(document).ready(function () {
 
   function appendMessage(text, sender = 'user') {
     const alignment = sender === 'user' ? 'text-end' : 'text-start';
-    const bgColor = sender === 'user' ? 'bg-primary text-white' : 'bg-light';
-    const messageHTML = `<div class="chat-message my-2 p-2 rounded shadow-sm ${bgColor} ${alignment}">${text}</div>`;
+    const bgColor = sender === 'user' ? 'bg-usuario' : 'bg-ia';
+
+    // Reemplazo \n por <br>
+    const htmlText = text.replace(/\n/g, '<br>');
+
+    const messageHTML = `<div class="chat-message my-2 p-2 rounded shadow-sm ${bgColor} ${alignment}">${htmlText}</div>`;
     $chatHistory.append(messageHTML);
     $chatHistory.scrollTop($chatHistory[0].scrollHeight);
   }
